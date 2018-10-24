@@ -3,14 +3,15 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 //import { LogIn } from '../pages/login/login';
-import { TabsPage } from '../pages/tabs/tabs';
+//import { TabsPage } from '../pages/tabs/tabs';
+import { CreateUser } from '../pages/create-user/create-user';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
 
-  rootPage: any = TabsPage; // Want the app to start on the login page
+  rootPage: any = CreateUser; // Want the app to start on the login page
   constructor(public platform: Platform) {
     this.initializeApp();
     
