@@ -10,5 +10,4 @@ export class LogIn {
   constructor(public navCtrl: NavController) {
 
   }
-
 }
