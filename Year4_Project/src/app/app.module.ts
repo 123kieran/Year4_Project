@@ -1,43 +1,61 @@
 import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+
+import { LogIn } from '../pages/login/login';
+import { CreateUser } from '../pages/create-user/create-user';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/login/login';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+// Firebase / AngularFire2 Stuff
+// Adapted from https://www.joshmorony.com/building-a-crud-ionic-2-application-with-firebase-angularfire/
+
+// Import the AF2 Module
+import { AngularFireModule } from 'angularfire2';
+
+// Info taken from my firebase account
+export const firebaseConfig = {
+  apiKey: "AIzaSyD2krnUR8pmVYtNQYviDeZNiyr4dhOukIw",
+    authDomain: "tradeperson-8f2f6.firebaseapp.com",
+    databaseURL: "https://tradeperson-8f2f6.firebaseio.com",
+    projectId: "tradeperson-8f2f6",
+    storageBucket: "tradeperson-8f2f6.appspot.com",
+    messagingSenderId: "886537853173"
+};
+
+
 
 @NgModule({
-  declarations: [
+  declarations: [   
     MyApp,
+    LogIn,
+    CreateUser,
     AboutPage,
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+   
+
   ],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig) //initialise firebase
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
+  entryComponents: [    // entryComponents tells the offline template compiler to compile the components and create factories for them
     MyApp,
+    LogIn,
+    CreateUser,
     AboutPage,
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+  
+ 
   ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler} ]
 })
 export class AppModule {}
