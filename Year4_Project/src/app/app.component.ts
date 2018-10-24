@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-//import { LogIn } from '../pages/login/login';
-//import { TabsPage } from '../pages/tabs/tabs';
-//import { CreateUser } from '../pages/create-user/create-user';
+
 import { LogIn } from '../pages/login/login';
 
 @Component({
