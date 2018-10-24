@@ -3,7 +3,7 @@ import { Platform, NavController, NavParams, AlertController, LoadingController,
 import { AngularFireAuth, AuthProviders, AuthMethods } from 'angularfire2';
 // AngularFireAuth allows log in / sign up features
 import { CreateUser } from '../create-user/create-user';
-
+import firebase from 'firebase'; // for password reset
 
 import { TabsPage } from '../tabs/tabs';
 
@@ -53,6 +53,64 @@ export class LogIn {
    
   } // end log in
 
+// Forgot password
+  forgotPassword(){
+
+    let prompt = this.alertCtrl.create({
+      title: 'Forgotten Password',
+      message: "Send Reset Link to:",
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'your@email.com'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Send',
+          handler: data => {
+            console.log(data.email);
+
+            let email = data.email;
+            
+            // Set up toast if successful
+              let toast = this.toastCtrl.create({
+                message: 'Reset link sent! Check your emails.',
+                duration: 5000  // lasts 3 seconds
+              });
+
+            // Set up an alert in case of error
+            console.log("Email: " + email);
+            let prompt = this.alertCtrl.create({
+                title: 'Whoops!',
+                subTitle: "Something went wrong... Make sure you entered the right email!",
+                buttons: ['OK']
+              });
+
+            this.fireauth.sendPasswordResetEmail(email).then(function() {
+
+              toast.present();
+
+            }, function(error) {
+              console.log("Something went wrong");
+
+              prompt.present();
+
+            }); 
+          } // end handler
+        } // end save functions
+      ] // end buttons
+    }); // end create alert
+    
+    prompt.present(); // show reset prompt
+
+  }
 
 // let user know it's loading...
   showLoading() {
