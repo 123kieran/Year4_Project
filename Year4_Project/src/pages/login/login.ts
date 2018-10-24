@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Platform, NavController, NavParams, AlertController, LoadingController, ToastController } from 'ionic-angular';
 import { AngularFireAuth, AuthProviders, AuthMethods } from 'angularfire2';
+// AngularFireAuth allows log in / sign up features
+import { CreateUser } from '../create-user/create-user';
+
 
 import { TabsPage } from '../tabs/tabs';
 
@@ -28,7 +31,10 @@ export class LogIn {
     });
   }
 
-
+// Register a user
+  openRegisterPage(){
+    this.navCtrl.push(CreateUser);
+  }
 
 // User Log In
   public loginhome() {
@@ -46,7 +52,6 @@ export class LogIn {
     });
    
   } // end log in
-
 
 
 // let user know it's loading...
