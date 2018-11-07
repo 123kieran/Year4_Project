@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget android-versionCode="2" id="com.ionicframework.stupla106948" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ChatApp</name>
-    <description>Chat with friends</description>
+    <name>Tradie</name>
+    <description>TradePersonApp</description>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
