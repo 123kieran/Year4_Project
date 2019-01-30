@@ -1,25 +1,22 @@
-  //home.ts
-  import {Component} from "@angular/core";
- // import {ItemSliding, Item} from 'ionic-angular';
-  import {createJobService} from '../../providers/create-job-service/create-job-service';
- // import {createJob} from '../../createJob.ts';
-import { createJob } from "../../app/createJob";
+import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 
-  @Component({
-    templateUrl: 'home.html',
-    providers: [createJobService]
-  })
-  export class HomePage {
-  public createjobs: createJob[];
+/*
+  Generated class for the HomePage page.
 
-  constructor(public createjobService: createJobService) {
-    this.loadcreateJob();
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+*/
+@Component({
+  selector: 'page-home',
+  templateUrl: 'home.html'
+})
+export class HomePage {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePagePage');
   }
 
-  loadcreateJob() {
-    this.createjobService.load()
-        .subscribe(data => {
-          this.createjobs = data;
-        })
-    }
-  }
+}
