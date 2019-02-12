@@ -28,11 +28,11 @@ db = database; // Our database object from mLab
 console.log("Database connection ready");
 
 
-// GET: retrieve all todos
-app.get("/api/todos", function(req, res) {
-    db.collection("todos").find({}).toArray(function(err, docs) {
+// GET: retrieve all job
+app.get("/api/job", function(req, res) {
+    db.collection("job").find({}).toArray(function(err, docs) {
     if (err) {
-    handleError(res, err.message, "Failed to get todos");
+    handleError(res, err.message, "Failed to get job");
     } else {
     res.status(200).json(docs);
     }
@@ -40,15 +40,15 @@ app.get("/api/todos", function(req, res) {
     });
     
     // POST: create a new todo
-    app.post("/api/todos", function(req, res) {
-    var newTodo = {
+    app.post("/api/job", function(req, res) {
+    var newJob = {
     description: req.body.description,
     isComplete: false
     }
     
-    db.collection("todos").insertOne(newTodo, function(err, doc) {
+    db.collection("job").insertOne(newJob, function(err, doc) {
     if (err) {
-    handleError(res, err.message, "Failed to add todo");
+    handleError(res, err.message, "Failed to add job");
     } else {
     res.status(201).json(doc.ops[0]);
     }
@@ -56,28 +56,28 @@ app.get("/api/todos", function(req, res) {
     });
     
     /*
-    * Endpoint "/api/todos/:id"
+    * Endpoint "/api/job/:id"
     */
     
     // GET: retrieve a todo by id -- Note, not used on front-end
-    app.get("/api/todos/:id", function(req, res) {
-    db.collection("todos").findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+    app.get("/api/job/:id", function(req, res) {
+    db.collection("job").findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
     if (err) {
-    handleError(res, err.message, "Failed to get todo by _id");
+    handleError(res, err.message, "Failed to get job by _id");
     } else {
     res.status(200).json(doc);
     }
     });
     });
     
-    // PUT: update a todo by id
-    app.put("/api/todos/:id", function(req, res) {
+    // PUT: update a job by id
+    app.put("/api/job/:id", function(req, res) {
     var updateTodo = req.body;
     delete updateTodo._id;
     
-    db.collection("todos").updateOne({_id: new ObjectID(req.params.id)}, updateTodo, function(err, doc) {
+    db.collection("job").updateOne({_id: new ObjectID(req.params.id)}, updateTodo, function(err, doc) {
     if (err) {
-    handleError(res, err.message, "Failed to update todo");
+    handleError(res, err.message, "Failed to update job");
     } else {
     res.status(204).end();
     }
@@ -85,10 +85,10 @@ app.get("/api/todos", function(req, res) {
     });
     
     // DELETE: delete a todo by id
-    app.delete("/api/todos/:id", function(req, res) {
-    db.collection("todos").deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+    app.delete("/api/job/:id", function(req, res) {
+    db.collection("job").deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
     if (err) {
-    handleError(res, err.message, "Failed to delete todo");
+    handleError(res, err.message, "Failed to delete job");
     } else {
     res.status(204).end();
     }
