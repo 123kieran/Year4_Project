@@ -39442,6 +39442,19 @@ button.create {
   margin-right: 20%;
 }
 
+.heading {
+  font-size: large;
+  margin: 20px;
+  text-align: center;
+}
+
+button.create {
+  margin-top: 75px;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
 .logform {
   margin-top: 50px;
 }

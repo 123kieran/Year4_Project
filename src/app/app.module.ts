@@ -15,8 +15,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
-//import { createJobService } from '../providers/create-job-service/create-job-service';
-//import { TodoServiceProvider } from '../providers/todo-service/todo-service';
+import { Jobs } from '../providers/jobs';
 
 // Info taken from my firebase account
 export const firebaseConfig = {
@@ -61,5 +60,7 @@ export const firebaseConfig = {
  // providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
    /// createJobService,
    // TodoServiceProvider ]
-})
+   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},  Jobs]
+  })
+
 export class AppModule {}
