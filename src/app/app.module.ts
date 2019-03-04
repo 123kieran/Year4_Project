@@ -57,9 +57,7 @@ export const firebaseConfig = {
   
  
   ],
- // providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
-   /// createJobService,
-   // TodoServiceProvider ]
+ 
    providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},  Jobs]
   })
 
