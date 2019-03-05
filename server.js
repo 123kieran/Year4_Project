@@ -39,58 +39,58 @@ app.listen(8080);
 console.log("App listening on port 8080");
  
 // Model for the reviews in our app
-var Review = mongoose.model('Review', {
+var Job = mongoose.model('Job', {
     title: String,
     description: String,
-    rating: Number
+   // rating: Number
 });
  
 // Routes
  
 // Get reviews
-app.get('/api/reviews', function(req, res) {
+app.get('/api/jobs', function(req, res) {
 
-    console.log("fetching reviews");
+    console.log("fetching jobs");
 
     // use mongoose to get all reviews in the database
-    Review.find(function(err, reviews) {
+    Job.find(function(err, jobs) {
 
         // if there is an error retrieving, send the error. nothing after res.send(err) will execute
         if (err)
             res.send(err)
 
-        res.json(reviews); // return all reviews in JSON format
+        res.json(jobs); // return all reviews in JSON format
     });
 });
 
 // create review and send back all reviews after creation
-app.post('/api/reviews', function(req, res) {
+app.post('/api/jobs', function(req, res) {
 
-    console.log("creating review");
+    console.log("creating job");
 
     // create a review, information comes from request from Ionic
-    Review.create({
+    Job.create({
         title : req.body.title,
         description : req.body.description,
-        rating: req.body.rating,
+        //rating: req.body.rating,
         done : false
-    }, function(err, review) {
+    }, function(err, job) {
         if (err)
             res.send(err);
 
         // get and return all the reviews after another is created
-        Review.find(function(err, reviews) {
+        Job.find(function(err, jobs) {
             if (err)
                 res.send(err)
-            res.json(reviews);
+            res.json(jobs);
         });
     });
 });
 
 // delete a review
-app.delete('/api/reviews/:review_id', function(req, res) {
-    Review.remove({
-        _id : req.params.review_id
-    }, function(err, review) {
+app.delete('/api/jobs/:job_id', function(req, res) {
+    Job.remove({
+        _id : req.params.job_id
+    }, function(err, job) {
     });
 });
