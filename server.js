@@ -6,18 +6,18 @@ var methodOverride = require('method-override'); //This importes method-override
 var cors = require('cors'); // This imports cors into our project
 
 // Our MongoDB dabase is imported to our node serve here.
-var mongodb = require('mongodb'),
-mongoClient = mongodb.MongoClient,
-ObjectID = mongodb.ObjectID, // Used in API endpoints
-db;
+var mongoose = require('mongoose'),
+    mongoClient = mongoose.mongoClient,
+    ObjectID = mongoose.ObjectID,
+    db;
  
 // Configuration
 // Below was for our originall local connection
 //mongoose.connect('mongodb://localhost/reviews');
 
 //Below we connect our mLabs database to our node server
-var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt';
-
+mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt');
+ 
 app.use(morgan('dev')); // This log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'}));  // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); // parse application/json for sending between the app and the database
@@ -39,11 +39,11 @@ app.listen(8080);
 console.log("App listening on port 8080");
  
 // Model for the reviews in our app
-var Job =  {
+var Job = mongoose.model('Job', {
     title: String,
     description: String,
    // rating: Number
-};
+});
  
 // Routes
  
