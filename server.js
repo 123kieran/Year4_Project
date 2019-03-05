@@ -16,7 +16,7 @@ var mongoose = require('mongoose'),
 //mongoose.connect('mongodb://localhost/reviews');
 
 //Below we connect our mLabs database to our node server
-mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt');
+mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt',{ useNewUrlParser: true });
  
 app.use(morgan('dev')); // This log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'}));  // parse application/x-www-form-urlencoded
@@ -35,8 +35,13 @@ app.use(function(req, res, next) {
 });
 
 // Tells the app which port to listen on. 
-app.listen(8080);
-console.log("App listening on port 8080");
+//app.listen(8080);
+//console.log("App listening on port 8080");
+
+
+app.listen(process.env.PORT || 8080, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
  
 // Model for the reviews in our app
 var Job = mongoose.model('Job', {
