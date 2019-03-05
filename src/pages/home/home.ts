@@ -13,7 +13,7 @@ export class HomePage {
  
   title: any;
   description: any;
-  rating: any;
+  //rating: any;
  
   constructor(public viewCtrl: ViewController) {
  
@@ -25,8 +25,8 @@ export class HomePage {
   save(): void {
     let job = { // the revew item
       title: this.title, // the title of the review
-      description: this.description, // the review description
-      rating: this.rating // the review rating
+      description: this.description // the review description
+     // rating: this.rating // the review rating
     };
     this.viewCtrl.dismiss(job); // closes the add review page once added
   }
