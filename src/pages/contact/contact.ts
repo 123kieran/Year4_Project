@@ -41,7 +41,7 @@ export class ContactPage {
     //when the modal has been dismissed the review is pushed to the Node server to be stored in the database.
     modal.onDidDismiss(job => {
       if(job){
-        this.job.push(job);
+       // this.job.push(job);
         this.job.createJob(job);        
       }
     });
