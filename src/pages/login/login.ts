@@ -6,6 +6,8 @@ import { CreateUser } from '../create-user/create-user';
 import firebase from 'firebase'; // for password reset
 
 import { TabsPage } from '../tabs/tabs';
+import { Contact } from 'ionic-native';
+import { ContactPage } from '../contact/contact';
 
 
 
@@ -45,8 +47,8 @@ export class LogIn {
         method: AuthMethods.Password 
     }).then((authData) => {
       this.loader.dismiss();
-     this.navCtrl.setRoot(TabsPage);
-     this.navCtrl.push(TabsPage,{email});  //push the email to tv page
+     this.navCtrl.setRoot(ContactPage);
+     this.navCtrl.push(ContactPage,{email});  //push the email to tv page
     }).catch((error) => {
       this.showError(error); // if log in is unsuccessful show error
     });

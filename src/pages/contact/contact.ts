@@ -9,7 +9,7 @@ import { Jobs } from '../../providers/jobs'; //imports the review provider where
 })
 export class ContactPage {
  
-  job: any;
+   job : any;
 
  /* doRefresh(refresher) {
     console.log('Begin async operation', refresher);
@@ -41,8 +41,8 @@ export class ContactPage {
     //when the modal has been dismissed the review is pushed to the Node server to be stored in the database.
     modal.onDidDismiss(job => {
       if(job){
-       // this.job.push(job);
-        this.job.createJob(job);        
+       job= this.job.push(job);
+       job= this.job.createJob(job);        
       }
     });
     modal.present();
