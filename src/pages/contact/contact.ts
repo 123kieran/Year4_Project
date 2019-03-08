@@ -9,7 +9,7 @@ import { Jobs } from '../../providers/jobs'; //imports the review provider where
 })
 export class ContactPage {
  
-   job : any;
+   jobs : any;
 
  /* doRefresh(refresher) {
     console.log('Begin async operation', refresher);
@@ -23,15 +23,15 @@ export class ContactPage {
     }, 5000);
   } //Here is our attmpt at refreshing the page */
  
-  constructor(public nav: NavController, public Job: Jobs, public modalCtrl: ModalController) {
+  constructor(public nav: NavController, public jobService: Jobs, public modalCtrl: ModalController) {
  
   }
  
   ionViewDidLoad(){
     //Gets the reviews from the node server and displays them in the app
-    this.job.getJobs().then((data) => {
+    this.jobService.getJobs().then((data) => {
       console.log(data);
-      this.job = data;
+      this.jobs = data;
     });
   }
  
@@ -41,8 +41,8 @@ export class ContactPage {
     //when the modal has been dismissed the review is pushed to the Node server to be stored in the database.
     modal.onDidDismiss(job => {
       if(job){
-       job= this.job.push(job);
-       job= this.job.createJob(job);        
+        this.jobs.push(job);
+        this.jobService.createJob(job);        
       }
     });
     modal.present();
@@ -50,11 +50,11 @@ export class ContactPage {
  
   deleteJob(job){
     //Remove the review locally
-    let index = this.job.indexOf(job);
+    let index = this.jobs.indexOf(job);
     if(index > -1){
-      this.job.splice(index, 1);
+      this.jobs.splice(index, 1);
     }   
     //Remove from database by sending data to the node server.
-    this.job.deleteJob(job._id);
+    this.jobService.deleteJob(job._id);
   }
 }

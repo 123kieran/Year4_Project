@@ -16,8 +16,15 @@ var mongoose = require('mongoose'),
 //mongoose.connect('mongodb://localhost/reviews');
 
 //Below we connect our mLabs database to our node server
-mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt',{ useNewUrlParser: true });
+//mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt',{ useNewUrlParser: true });
  
+
+mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt',{ useNewUrlParser: true }, function (error) {
+    if (error) console.error(error);
+    else console.log('mongo connected');
+});
+
+
 app.use(morgan('dev')); // This log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'}));  // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); // parse application/json for sending between the app and the database
