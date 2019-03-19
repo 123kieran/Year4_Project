@@ -12,18 +12,12 @@ var mongoose = require('mongoose'),
     db;
  
 // Configuration
-// Below was for our originall local connection
-//mongoose.connect('mongodb://localhost/reviews');
-
-//Below we connect our mLabs database to our node server
-//mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt',{ useNewUrlParser: true });
- 
+//Below i connect my mLabs database to our node server
 
 mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt',{ useNewUrlParser: true }, function (error) {
     if (error) console.error(error);
-    else console.log('mongo connected');
-});
-
+    else console.log('Mongo Connected');
+}); 
 
 app.use(morgan('dev')); // This log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'}));  // parse application/x-www-form-urlencoded
@@ -42,24 +36,19 @@ app.use(function(req, res, next) {
 });
 
 // Tells the app which port to listen on. 
-//app.listen(8080);
-//console.log("App listening on port 8080");
-
-
-app.listen(process.env.PORT || 8080, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  });
+app.listen(8080);
+console.log("App listening on port 8080");
  
 // Model for the reviews in our app
 var Job = mongoose.model('Job', {
     title: String,
     description: String,
-   // rating: Number
+    rating: Number
 });
  
 // Routes
  
-// Get reviews
+// Get jobs
 app.get('/api/jobs', function(req, res) {
 
     console.log("fetching jobs");
@@ -75,22 +64,22 @@ app.get('/api/jobs', function(req, res) {
     });
 });
 
-// create review and send back all reviews after creation
+// create job and send back all jobss after creation
 app.post('/api/jobs', function(req, res) {
 
     console.log("creating job");
 
-    // create a review, information comes from request from Ionic
+    // create a job, information comes from request from Ionic
     Job.create({
         title : req.body.title,
         description : req.body.description,
-        //rating: req.body.rating,
+        rating: req.body.rating,
         done : false
     }, function(err, job) {
         if (err)
             res.send(err);
 
-        // get and return all the reviews after another is created
+        // get and return all the jobs after another is created
         Job.find(function(err, jobs) {
             if (err)
                 res.send(err)
@@ -99,7 +88,7 @@ app.post('/api/jobs', function(req, res) {
     });
 });
 
-// delete a review
+// delete a job
 app.delete('/api/jobs/:job_id', function(req, res) {
     Job.remove({
         _id : req.params.job_id

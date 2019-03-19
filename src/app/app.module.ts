@@ -6,9 +6,8 @@ import { MyApp } from './app.component';
 import { LogIn } from '../pages/login/login';
 import { CreateUser } from '../pages/create-user/create-user';
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+
 
 // Firebase / AngularFire2 Stuff
 // Adapted from https://www.joshmorony.com/building-a-crud-ionic-2-application-with-firebase-angularfire/
@@ -16,6 +15,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
 import { Jobs } from '../providers/jobs';
+import { JobPage } from '../pages/job-list-page/job-list-page';
+import { AddJobPage } from '../pages/add-job-page/add-job-page';
 
 // Info taken from my firebase account
 export const firebaseConfig = {
@@ -35,10 +36,9 @@ export const firebaseConfig = {
     LogIn,
     CreateUser,
     AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage,
-   
+   JobPage,
+   AddJobPage,
 
   ],
   imports: [
@@ -51,10 +51,9 @@ export const firebaseConfig = {
     LogIn,
     CreateUser,
     AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage,
-  
+  JobPage,
+  AddJobPage,
  
   ],
  

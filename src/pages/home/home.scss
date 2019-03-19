@@ -1,14 +1,22 @@
-.heading {
-    font-size: large;
-    margin: 20px;
-    text-align: center;
+page-home {
+.ios, .md {
+ 
+  home-page {
+ 
+    ion-item {
+      background-color: #fff;
+      border-bottom: none !important;
+    }
+ 
+    ion-label {
+      white-space: normal;
+    }
+ 
+    ion-item-sliding {
+      margin: 10px;
+    }
+ 
+  }
+ 
 }
-
-
-
-button.save {
-    margin-top: 50px;
-    width: 60%;
-    margin-left: 20%;    
-    margin-right: 20%;
 }

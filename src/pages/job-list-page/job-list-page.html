@@ -1,0 +1,40 @@
+<ion-header>
+ <ion-navbar color="secondary">
+  <ion-title>
+    Jobs
+  </ion-title>
+  <ion-buttons end>
+    <!--Button for adding jobs -->
+    <button ion-button icon-only (click)="addJob()"><ion-icon name="add"></ion-icon></button>
+  </ion-buttons>
+ </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+  <!-- Here is my attempt at refreshing the list
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  -->
+  <ion-list no-lines>
+    <!--Item can be swiped to reveal delete button -->
+    <!--Loop for displaying jobs -->
+    <ion-item-sliding *ngFor="let job of jobs">
+    <!--The job item displaying the title, description and the rating. -->
+      <ion-item>
+        <h2>{{job.title}}</h2>
+        <p>{{job.description}}</p>
+        <ion-icon *ngIf="job.rating < 50" danger name="sad"></ion-icon>
+        <ion-icon *ngIf="job.rating >= 50" secondary name="happy"></ion-icon> 
+        {{job.rating}}
+      </ion-item>
+      <!--Only option here is our delete option -->
+      <ion-item-options>
+        <button ion-button color="danger" (click)="deleteJob(job)"> <!--the delete button for deleting the job from the app and the database-->
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

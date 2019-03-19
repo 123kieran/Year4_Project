@@ -11,7 +11,7 @@ export class Jobs {
     this.data = null;
   }
  
- //Gets the review data
+ //Gets the job data
   getJobs(){
  
     if (this.data) {

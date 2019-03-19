@@ -39415,6 +39415,23 @@ ion-navbar {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/*
+  This is the scss page for themming the add review page. it is written in sass.
+*/
+page-add-job-page .ios add-job-page ion-label, page-add-job-page .md add-job-page ion-label {
+  margin-left: 10px;
+}
+
+page-add-job-page .ios add-job-page ion-item, page-add-job-page .md add-job-page ion-item {
+  background-color: #6495ED !important;
+  background-image: url("../back.png");
+}
+
+page-add-job-page .ios add-job-page ion-input, page-add-job-page .ios add-job-page ion-select, page-add-job-page .ios add-job-page ion-textarea, page-add-job-page .md add-job-page ion-input, page-add-job-page .md add-job-page ion-select, page-add-job-page .md add-job-page ion-textarea {
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+}
+
 .createform {
   margin-top: 50px;
 }
@@ -39442,17 +39459,30 @@ button.create {
   margin-right: 20%;
 }
 
-.heading {
-  font-size: large;
-  margin: 20px;
-  text-align: center;
+page-home .ios home-page ion-item, page-home .md home-page ion-item {
+  background-color: #fff;
+  border-bottom: none !important;
 }
 
-button.save {
-  margin-top: 50px;
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
+page-home .ios home-page ion-label, page-home .md home-page ion-label {
+  white-space: normal;
+}
+
+page-home .ios home-page ion-item-sliding, page-home .md home-page ion-item-sliding {
+  margin: 10px;
+}
+
+page-review-list-page .ios home-page ion-item, page-review-list-page .md home-page ion-item {
+  background-color: #fff;
+  border-bottom: none !important;
+}
+
+page-review-list-page .ios home-page ion-label, page-review-list-page .md home-page ion-label {
+  white-space: normal;
+}
+
+page-review-list-page .ios home-page ion-item-sliding, page-review-list-page .md home-page ion-item-sliding {
+  margin: 10px;
 }
 
 .logform {

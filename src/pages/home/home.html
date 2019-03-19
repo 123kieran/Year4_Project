@@ -1,37 +1,9 @@
-<ion-header>
- <ion-toolbar color="secondary">
-  <ion-title>Add Job</ion-title>
-  <ion-buttons end>
-    <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
-  </ion-buttons>
- </ion-toolbar>
-</ion-header>
- 
-<ion-content>
-  <ion-list no-lines>
- 
-    <!--This is the title item in the review page where users can enter the title of thier review -->
-    <ion-item>
-      <ion-label floating>Title</ion-label> <!-- The Title text on the page -->
-      <ion-input [(ngModel)]="title" type="text"></ion-input> <!--The text box where users input their desired title -->
-    </ion-item>
- 
-    <!-- This is the description item on the add review page where users can enter there desired discription to thier review -->
-    <ion-item>
-      <ion-label floating>Comment</ion-label> <!--The Comment text on the page -->
-      <ion-textarea [(ngModel)]="description"></ion-textarea> <!--The text box where users input thier desired description -->
-    </ion-item>
- 
-    <!--This is where the rating of the review item is given -->
-    <!--S<ion-item>
-      <ion-range min="0" max="100" pin="true" [(ngModel)]="rating"> <!--the slider for the review item -->
-      <!--S  <ion-icon range-left name="sad"></ion-icon> <!--Sets the icon to sad if the slider is far to the left-->
-        <!--<ion-icon range-right name="happy"></ion-icon>Sets the icon to happy if the slider is far right-->
-     <!-- </ion-range>
-    </ion-item>-->
- 
-  </ion-list>
- 
-  <button class= "save" ion-button color="green" (click)="save()">Save</button><!--The button which calls the save function from our .ts file to save the review item -->
- 
+ <ion-content>
+
+<!-- ionic tabs for map-->
+  <ion-tabs color="light">
+    <ion-tab [root]="tab1Root" tabTitle="Add" tabIcon="information-circle"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
+    
+  </ion-tabs>
 </ion-content>
