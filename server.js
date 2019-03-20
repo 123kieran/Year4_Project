@@ -36,9 +36,13 @@ app.use(function(req, res, next) {
 });
 
 // Tells the app which port to listen on. 
-app.listen(8080);
-console.log("App listening on port 8080");
- 
+//app.listen(8080);
+//console.log("App listening on port 8080");
+
+app.listen(process.env.PORT || 8080, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
+
 // Model for the reviews in our app
 var Job = mongoose.model('Job', {
     title: String,
