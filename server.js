@@ -78,7 +78,8 @@ app.post('/api/jobs', function(req, res) {
     Job.create({
         title : req.body.title,
         description : req.body.description,
-        rating: req.body.rating,
+        location: req.body.location,
+        price: req.body.price,
         done : false
     }, function(err, job) {
         if (err)
