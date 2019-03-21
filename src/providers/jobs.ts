@@ -47,6 +47,8 @@ export class Jobs {
     this.http.delete('https://kierantradie.herokuapp.com/api/jobs/' + id).subscribe((res) => {
       console.log(res.json());
     });    
+
+  
  
   }
  

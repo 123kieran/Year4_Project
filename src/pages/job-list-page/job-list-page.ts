@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
-import { NavController, ModalController } from 'ionic-angular';
+import { Platform, NavController, NavParams, ModalController } from 'ionic-angular';
 import {  AddJobPage } from '../add-job-page/add-job-page'; // imports the add job page to be navigated to
 import { Jobs } from '../../providers/jobs'; //imports the job provider where we connect to our API.
+import { MessagePage } from "../message/message";
  
 @Component({
   selector: 'JobPage',
@@ -12,7 +13,7 @@ export class JobPage {
   jobs: any;
 
  
-  constructor(public nav: NavController, public jobService: Jobs, public modalCtrl: ModalController) {
+  constructor(public platform: Platform, public navCtrl: NavController, public navParams: NavParams, public jobService: Jobs, public modalCtrl: ModalController) {
  
   }
  
@@ -45,5 +46,10 @@ export class JobPage {
     }   
     //Remove from database by sending data to the node server.
     this.jobService.deleteJob(job._id);
+  }
+
+  messageJob(){
+    //Creates the modal for adding job
+    this.navCtrl.push(MessagePage);
   }
 }
