@@ -21,7 +21,11 @@
       <ion-label floating>Comment</ion-label> <!--The Comment text on the page -->
       <ion-textarea [(ngModel)]="description"></ion-textarea> <!--The text box where users input thier desired description -->
     </ion-item>
- 
+     </ion-item>
+     <ion-item>
+      <ion-label floating>Location</ion-label> <!--The Comment text on the page -->
+      <ion-textarea [(ngModel)]="location"></ion-textarea> <!--The text box where users input thier desired description -->
+    </ion-item>
     <!--This is where the rating of the review item is given -->
     <ion-item>
      <ion-label floating>Max Price</ion-label> <!--The Comment text on the page -->
@@ -29,7 +33,8 @@
         <ion-icon range-left name="logo-euro"></ion-icon> <!--Sets the icon to sad if the slider is far to the left-->
         <ion-icon range-right name="logo-euro"></ion-icon><!--Sets the icon to happy if the slider is far right-->
       </ion-range>
-    </ion-item>
+
+
  
   </ion-list>
  

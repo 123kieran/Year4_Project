@@ -14,6 +14,7 @@ export class AddJobPage {
   title: any;
   description: any;
   price: any;
+  location:any;
  
   constructor(public viewCtrl: ViewController) {
  
@@ -26,7 +27,8 @@ export class AddJobPage {
     let job = { // the revew item
       title: this.title, // the title of the job
       description: this.description, // the job description
-      price: this.price // the job rating
+      location: this.location,
+      price: this.price // the job price
     };
     this.viewCtrl.dismiss(job); // closes the add job page once added
   }
