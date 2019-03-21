@@ -17,6 +17,7 @@ import { AngularFireModule } from 'angularfire2';
 import { Jobs } from '../providers/jobs';
 import { JobPage } from '../pages/job-list-page/job-list-page';
 import { AddJobPage } from '../pages/add-job-page/add-job-page';
+import { MessagePage } from '../pages/message/message';
 
 // Info taken from my firebase account
 export const firebaseConfig = {
@@ -39,6 +40,7 @@ export const firebaseConfig = {
     HomePage,
    JobPage,
    AddJobPage,
+   MessagePage,
 
   ],
   imports: [
@@ -54,6 +56,7 @@ export const firebaseConfig = {
     HomePage,
   JobPage,
   AddJobPage,
+  MessagePage,
  
   ],
  
