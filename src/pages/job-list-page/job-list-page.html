@@ -24,9 +24,8 @@
       <ion-item>
         <h2>{{job.title}}</h2>
         <p>{{job.description}}</p>
-        <ion-icon *ngIf="job.rating < 50" danger name="sad"></ion-icon>
-        <ion-icon *ngIf="job.rating >= 50" secondary name="happy"></ion-icon> 
-        {{job.rating}}
+        <ion-icon *ngIf="job.price >= 0" secondary name="logo-euro"></ion-icon> 
+        {{job.price}}
       </ion-item>
       <!--Only option here is our delete option -->
       <ion-item-options>

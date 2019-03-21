@@ -4,8 +4,8 @@
 
 import { Component } from "@angular/core";
 import { NavController, ModalController } from 'ionic-angular';
-import { AddJobPage } from '../add-job-page/add-job-page'; // Adds the add job page to be loaded into a modal 
-import { Jobs } from '../../providers/jobs'; // Imports the provider
+//import { AddJobPage } from '../add-job-page/add-job-page'; // Adds the add job page to be loaded into a modal 
+//import { Jobs } from '../../providers/jobs'; // Imports the provider
 //import { MapPage } from '../map/map'; // imports the job page to be opened from a tab
 //import { ListPage } from '../list/list'; // imports the list page to be opened from a tab
 import { JobPage } from '../job-list-page/job-list-page'; // imports the job page to be opened from a tab
@@ -23,41 +23,6 @@ export class HomePage {
   tab2Root: any = AboutPage;
   jobs: any; // job variable for creating and deleting job
  
-  constructor(public nav: NavController, public jobService: Jobs, public modalCtrl: ModalController) {
+  
  
-  }
- 
-  ionViewDidLoad(){
-    // gets the job from the database
-    this.jobService.getJobs().then((data) => {
-      console.log(data);
-      this.jobs = data;
-    });
-  }
- 
- /*
-  Function for adding job to the app, from the app.
- */
-  addJob(){
-    let modal = this.modalCtrl.create(AddJobPage); // opens a modal with the add job page
-    //Once the modal is dismissed the job is pushed to the database.
-    modal.onDidDismiss(job => {
-      if(job){
-        this.jobs.push(job);
-        this.jobService.createJob(job);        
-      }
-    });
-    modal.present();
-  }
- 
-  deleteJob(job){
-    //Remove the job locally
-      let index = this.jobs.indexOf(job);
- 
-      if(index > -1){
-        this.jobs.splice(index, 1);
-      }   
-    //Removes the job from the database
-    this.jobService.deleteJob(job._id);
-  }
 }

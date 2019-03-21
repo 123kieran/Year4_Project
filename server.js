@@ -47,7 +47,8 @@ app.listen(process.env.PORT || 8080, function(){
 var Job = mongoose.model('Job', {
     title: String,
     description: String,
-    rating: Number
+    price: Number
+    
 });
  
 // Routes
