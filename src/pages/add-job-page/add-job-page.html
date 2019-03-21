@@ -21,20 +21,58 @@
       <ion-label floating>Comment</ion-label> <!--The Comment text on the page -->
       <ion-textarea [(ngModel)]="description"></ion-textarea> <!--The text box where users input thier desired description -->
     </ion-item>
-     </ion-item>
-     <ion-item>
+   <ion-item>
       <ion-label floating>Location</ion-label> <!--The Comment text on the page -->
-      <ion-textarea [(ngModel)]="location"></ion-textarea> <!--The text box where users input thier desired description -->
-    </ion-item>
+      
+      <ion-select [(ngModel)]="location" >
+        <ion-option value="Antrim">Antrim</ion-option>
+        <ion-option value="Armagh">Armagh</ion-option>
+        <ion-option value="Carlow">Carlow</ion-option>
+        <ion-option value="Cavan">Cavan</ion-option>
+        <ion-option value="Clare">Clare</ion-option>
+        <ion-option value="Cork">Cork</ion-option>
+        <ion-option value="Derry">Derry</ion-option>
+        <ion-option value="Donegal">Donegal </ion-option>
+        <ion-option value="Down">Down</ion-option>
+        <ion-option value="Dublin">Dublin </ion-option>
+        <ion-option value="Fermanagh">Fermanagh </ion-option>
+        <ion-option value="Galway">Galway </ion-option>
+        <ion-option value="Kerry">Kerry</ion-option>
+        <ion-option value="Kildare">Kildare</ion-option>
+        <ion-option value="Kilkenny">Kilkenny</ion-option>
+        <ion-option value="Laois">Laois</ion-option>
+        <ion-option value="Leitrim">Leitrim</ion-option>
+        <ion-option value="Limerick">Limerick</ion-option>
+        <ion-option value="Longford">Longford</ion-option>
+        <ion-option value="Louth">Louth </ion-option>
+        <ion-option value="Mayo">Mayo</ion-option>
+        <ion-option value="Meath">Meath </ion-option>
+        <ion-option value="Monaghan">Monaghan </ion-option>
+        <ion-option value="Offaly">Offaly </ion-option>
+        <ion-option value="Roscommon">Roscommon</ion-option>
+        <ion-option value="Sligo">Sligo</ion-option>
+        <ion-option value="Tipperary">Tipperary</ion-option>
+        <ion-option value="Tyrone">Tyrone</ion-option>
+        <ion-option value="Waterford">Waterford </ion-option>
+        <ion-option value="Westmeath">Westmeath</ion-option>
+        <ion-option value="Wexford">Wexford </ion-option>
+        <ion-option value="Wicklow">Wicklow </ion-option>
+      
+
+      </ion-select>    </ion-item>
     <!--This is where the rating of the review item is given -->
     <ion-item>
+
+
+    
      <ion-label floating>Max Price</ion-label> <!--The Comment text on the page -->
-      <ion-range min="0" max="10000" pin="true" [(ngModel)]="price"> <!--the slider for the review item -->
+      <ion-range min="1" max="10000" pin="true" [(ngModel)]="price"> <!--the slider for the review item -->
         <ion-icon range-left name="logo-euro"></ion-icon> <!--Sets the icon to sad if the slider is far to the left-->
         <ion-icon range-right name="logo-euro"></ion-icon><!--Sets the icon to happy if the slider is far right-->
       </ion-range>
 
-
+    </ion-item>
+   
  
   </ion-list>
  
