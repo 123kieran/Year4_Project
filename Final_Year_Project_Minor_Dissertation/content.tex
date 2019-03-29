@@ -107,21 +107,117 @@ Check out the nice graphs in Figure \ref{tikz:graphs}, and the nice diagram in F
 
 
 \chapter{Technology Review}
-About seven to ten pages.
-\begin{itemize}
-\item Describe each of the technologies you used at a conceptual level. Standards, Database Model (e.g. MongoDB, CouchDB), XMl, WSDL, JSON, JAXP.
-\item Use references (IEEE format, e.g. [1]), Books, Papers, URLs (timestamp) – sources should be authoritative. 
-\end{itemize}
+In this section, I am going to talk about the different technologies I incorporated into this project.
+I have used a variety of new technologies which I felt would work well in my application. In this section, I will talk about the technologies I choose and my reasons for choosing these technologies. 
+For the backend development, I used the MEAN stack, for front-end development I chose Ionic Framework for cross platform app development so I could build the app on Android, IOS and Windows Phone. I then used Node.js for the server side aspect of the application, the node js server was then hosted on Heroku. Firstly, I are going to talk about the MEAN stack, then about Ionic and Heroku and then finishing off with GitHub. 
 
-\section{XML}
-Here's some nicely formatted XML:
-\begin{minted}{xml}
-<this>
-  <looks lookswhat="good">
-    Good
-  </looks>
-</this>
+\section{MEAN-Stack}
+What is the MEAN stack? A straight to the point explanation would be that the MEAN-Stack is a free and open-source JavaScript software stack for building dynamic web sites and web applications. Mean Stack is a combination of four popular and highly efficient Javascript libraries, namely MongoDB, Express.js, Angular JS and Node.js. (Shortened down to M for Mongo, E for Express, A for Angular and N for Node). 
+
+Mongo DB can be used to store documents in the JSON format, these JSON queries are then handled by Express JS and Node.js on the server side. Angular JS on the frontend is then fed these JSON documents. With the same language on both the client side and the server side. These two technologies work extremely well together and integration between these two environments is seamless and very subtle.\cite{Mean-Stack}
+
+Because all components of MEAN stack support programs written in JavaScript, MEAN applications can be written in one language for both server-side and client-side execution environments. In order to completely understand the reasons why mean stack is so widely used, we will talk about each of its components in detail below. 
+
+
+
+\subsection{MongoDB}
+The MEAN stack comes with a NoSql database technology called MongoDB.
+It is important that we understand what a NoSQL database is before going into further detail on MongoDB. NoSQL stands for (Not only Sequential Query Language). It is a database that provides a mechanism for storage and retrieval of data which is modelled by means other than the tabular relations used in relational databases. 
+
+NoSQL databases have been proven to be the solution to what is
+known as Big Data as they follow a schema-less data model. A NoSQL database provides increased scalability and flexibility compared to relational databases. Studies show that in recent years developers and organisation have experienced a sharp rise in the volume of user data and products that have to be stored in databases. 
+
+NoSQL databases started gaining popularity in the 2000’s when companies began investing and researching more into distributed databases \cite{no}.
+NoSQL databases are widely used to store and retrieve very large amounts
+of data using a key-value format. These types of databases have emerged
+as the best choices that suite modern mobile and web development. So now that its clear what NoSql is we are going to talk about MongoDB in more detail.
+
+MongoDB is a schema-free document database written in C++ and developed in an opensource project by the company 10gen Inc \cite{mongoname}. The name mongo is extracted from the word humongous. According to its developers, the main
+goal of MongoDB is to close the gap between the fast and highly scalable key-value-stores and feature-rich traditional RDBMSs.
+It provides high availability , high performance, and automatic scaling
+and allows data insertion without a predefined schema. 
+
+MongoDB is one of several database types to arise in the mid-2000s under the NoSQL banner. Instead of using tables and rows as in relational databases, MongoDB is built on an architecture of collections and documents. Documents comprise sets of key-value pairs and are the basic unit of data in MongoDB. Collections contain sets of documents and function as the equivalent of relational database tables. 
+A record in MongoDB is composed of field and value pairs and are similar to
+JSON objects. The value of field may consists of arrays, and array of documents
+or other documents.
+
+MongoDB maintains data consistency in the
+sense that one write operation to the data in the database allow subsequent
+read operations. They use a locking mechanism that contributes to increased
+execution time as the number of update operation increases. [8] [10].
+
+MongoDB supports dynamic schema design, allowing the document a collection to have different fields and structures. The database uses a document storage and data interchange format called BSON, which provides a binary representation of JSON-like documents. MongoDB also uses Automatic sharding wich enables data in a collection to be distributed across multiple systems for horizontal scalability as data volumes increase.\cite{MongoDB}.
+
+
+\subsection{How Mongo Works In My Application}
+In my application, I used mongo to store information from my jobss section. I wanted people to be able to add a job and post so other users could then also see that job. An example of how I set up my endpoints in the node server is shown here:
+
+\begin{minted}{javascript}
+ app.post('/api/jobs', function(req, res)
 \end{minted}
+
+Next, I created a Job provider which was a Typescript file that contained three methods getJobs, createJob, and deleteJobs. The getJob function sends a get request to my Heroku server that will then return my job data. The createJob function accepts a job object as a parameter and then posts that to the same endpoint. While my deleteJob function will make a request to the API to delete it. A small extract of my getJobs function is shown below:
+
+\begin{minted}{javascript}
+ getJobs(){
+
+if (this.data) {
+return Promise.resolve(this.data);
+}
+
+return new Promise(resolve => {
+
+this.http.get('https://kierantradie.herokuapp.com/api/jobs')
+.map(res => res.json())
+.subscribe(data => {
+this.data = data;
+resolve(this.data);
+});
+});
+}
+\end{minted}
+
+I used mongoose to connect my application to mlabs. Mongoose is a MongoDB ODM for Node. It provides the user with a simple validation and query API to help you interact with the MongoDB database.
+
+\begin{minted}{javascript}
+mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt',{ useNewUrlParser: true }, function (error) {
+    if (error) console.error(error);
+    else console.log('Mongo Connected');
+});
+\end{minted}
+
+
+
+
+
+\subsection{Express}
+
+\subsection{Node.js}
+
+\subsection{AngularJs}
+
+
+\section{RESTful API}
+
+\subsection {How RESTful API's work}
+
+
+\section{Ionic 2}
+
+
+
+\subsection{ What Ionic is }
+
+
+\subsection {Typescript}
+
+\section{Firebase}
+
+
+\section{Heroku}
+
+\section{GitHub}
 
 \chapter{System Design}
 As many pages as needed.
