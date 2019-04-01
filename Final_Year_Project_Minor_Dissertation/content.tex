@@ -188,14 +188,36 @@ mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.
 \end{minted}
 
 
-
-
-
 \subsection{Express}
-
+Express is another component of MEAN Stack. Express is a nodejs asynchronous based web framework. Express.js builds on the underlying capability of Node, by providing a web application server framework. Express.js is a Node.js web application server framework, designed for building single-page, multi-page and cross platform hybrid web applications and it gives Node.js a more realistic website structure that is not present when using Node by itself. For my application express will allow me to create routes for the REST API I will be creating.\cite{expressjs}
 \subsection{Node.js}
 
+Node.js is a Javascript runtime built on Chrome’s V8 JavaScript Engine.
+Node.js uses an event driven, non-blocking I/O model that makes it lightweight
+and efficient web server environment, ideal for constructing a web-service
+API’s. Node.js package ecosystem, “npm”, is the largest ecosystem of open
+source libraries in the world. For my application node will be my server which will sit between the frontend of the application and the MongoDB database.\cite{nodejs}
+
 \subsection{AngularJs}
+The final component making up the mean stack is Angularjs. Defined in Angulars official documentation\cite{angularjs} - AngularJS is a structural framework for dynamic
+web apps. Angular allows the user to use HTML as their front-end language and lets you extend HTML’s syntax to express an application’s component clearly. Angular also has a data binding and dependency injection which eliminates much
+of the code you currently have to write. This all happens within the
+browser, making it a perfect partner for any server technology.
+
+AngularJS simplifies application development by presenting a higher level of abstraction to the developer. Like most types of abstraction, it comes at a cost of flexibility. In other words, not every app is a good fit for AngularJS. AngularJS was built with the CRUD application in mind and this was another reason why I thought this technology would be a good fit for my application as I wanted to be able to add and delete data to a database. \cite{angularjsa}
+ 
+There are a number of reasons why angular js is so popular and some of which include how Angularjs structures the source code by following
+the Model View Controller. The second reason is  Angularjs ability to do two-way data binding. It decreases the amount of code
+that is written to keep the model and view in agreement.  Angularjs
+models are old java object (POJO), therefore it is quite simple to change or
+append properties without any major complications. Finally, and probably the most important
+feature that Angular js has to offer is dependency injection. Dependency injection
+is a software design pattern that deals with how components get hold of
+their dependencies. The angular injector subsystem is in the charge of creating
+components resolving their dependencies and providing them to other
+components as requested \cite{angularjsfeat}.
+
+After speaking in some detail about each component of the mean stack you should have a clearer understanding of this technology and how it works and benefits applications.  
 
 
 \section{RESTful API}
