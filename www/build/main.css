@@ -39415,21 +39415,36 @@ ion-navbar {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/*
-  This is the scss page for themming the add review page. it is written in sass.
-*/
-page-add-job-page .ios add-job-page ion-label, page-add-job-page .md add-job-page ion-label {
-  margin-left: 10px;
+.logform {
+  margin-top: 50px;
 }
 
-page-add-job-page .ios add-job-page ion-item, page-add-job-page .md add-job-page ion-item {
-  background-color: #6495ED !important;
-  background-image: url("../back.png");
+.heading {
+  font-size: large;
+  margin: 20px;
+  text-align: center;
 }
 
-page-add-job-page .ios add-job-page ion-input, page-add-job-page .ios add-job-page ion-select, page-add-job-page .ios add-job-page ion-textarea, page-add-job-page .md add-job-page ion-input, page-add-job-page .md add-job-page ion-select, page-add-job-page .md add-job-page ion-textarea {
-  background-color: #f2f2f2;
-  padding: 5px 10px;
+.inputfield {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0px;
+}
+
+.memo {
+  font-size: small;
+  width: 100%;
+}
+
+button.addjob {
+  margin-top: 50px;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .createform {
@@ -39472,17 +39487,29 @@ page-home .ios home-page ion-item-sliding, page-home .md home-page ion-item-slid
   margin: 10px;
 }
 
-page-review-list-page .ios home-page ion-item, page-review-list-page .md home-page ion-item {
-  background-color: #fff;
-  border-bottom: none !important;
+.logform {
+  margin-top: 50px;
 }
 
-page-review-list-page .ios home-page ion-label, page-review-list-page .md home-page ion-label {
-  white-space: normal;
+.heading {
+  font-size: large;
+  margin: 20px;
+  text-align: center;
 }
 
-page-review-list-page .ios home-page ion-item-sliding, page-review-list-page .md home-page ion-item-sliding {
-  margin: 10px;
+.inputfield {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0px;
+}
+
+.memo {
+  font-size: small;
+  width: 100%;
 }
 
 .logform {

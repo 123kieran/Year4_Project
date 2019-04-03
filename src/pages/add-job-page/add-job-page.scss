@@ -1,22 +1,29 @@
-/*
-  This is the scss page for themming the add review page. it is written in sass.
-*/
-page-add-job-page {
-  .ios, .md {
-    add-job-page {
-      ion-label {
-        margin-left: 10px;
-      }
-  
-      ion-item {
-        background-color: #6495ED !important;    
-        background-image: url('../back.png');
-      }
-  
-      ion-input, ion-select, ion-textarea {
-        background-color: #f2f2f2;
-        padding: 5px 10px;
-      }
-    }
-  }
+.logform {
+  margin-top: 50px;
+}
+
+.heading {
+  font-size: large;
+  margin: 20px;
+  text-align: center;
+}
+
+.inputfield {
+  align-content: center;
+  width: 80%;
+  margin-left: 10%;    
+  margin-right: 10%;
+  padding: 0px;
+}
+
+.memo{
+  font-size: small;
+  width: 100%;
+}
+
+button.addjob {
+  margin-top: 50px;
+  width: 60%;
+  margin-left: 20%;    
+  margin-right: 20%;
 }

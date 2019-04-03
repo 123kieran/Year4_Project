@@ -1,10 +1,12 @@
 <ion-header>
- <ion-toolbar color="secondary">
-  <ion-title>Add Job</ion-title>
-  <ion-buttons end>
+ <ion-toolbar color="blue">
+    <ion-title style="width: 100%">
+      Add Job :<em class="memo"> Get the job done!</em>
+    </ion-title>
+      <ion-buttons end>
     <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
   </ion-buttons>
- </ion-toolbar>
+  </ion-toolbar>
 </ion-header>
  
 <ion-content>
@@ -72,6 +74,6 @@
    
   </ion-list>
  
-  <button ion-button full color="secondary" (click)="save()">Save</button><!--The button which calls the save function from our .ts file to save the review item -->
+  <button class="addjob" ion-button color="green" (click)="save()">Save</button><!--The button which calls the save function from our .ts file to save the review item -->
  
 </ion-content>
