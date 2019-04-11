@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { LogIn } from '../login/login';
+
 
  
 //@IonicPage()
@@ -19,7 +19,7 @@ export class MessagePage {
   messages:string[];
   
   constructor(public db:AngularFireDatabase,public navCtrl: NavController, public navParams: NavParams){
-    this.email = this.navParams.get('email');
+    //this.email = this.navParams.get('email');
   this._chatSubscription = this.db.list('/message').subscribe(data =>{
     this.messages=data;
     });
@@ -58,7 +58,7 @@ sendMessage() {
       }
       //pushing to database
      this.db.list('/message').push({
-      email: this.email,
+      //email: this.email,
        message: this.message,
        time: this.time
      }).then( () =>{
