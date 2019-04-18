@@ -89,16 +89,16 @@ Check out the nice graphs in Figure \ref{tikz:graphs}, and the nice diagram in F
 
 
 \chapter{Technology Review}
-In this section, I am going to talk about the different technologies I incorporated into this project.
-I have used a variety of new technologies which I felt would work well in my application. In this section, I will talk about the technologies I choose and my reasons for choosing these technologies. 
-For the backend development, I used the MEAN stack, for front-end development I chose Ionic Framework for cross platform app development so I could build the app on Android, IOS and Windows Phone. I then used Node.js for the server side aspect of the application, the node js server was then hosted on Heroku. Firstly, I am going to talk about the MEAN stack, then about Ionic and Heroku and then finishing off with GitHub. 
+In this section, the different technologies incorporated in to this project will be discussed.A variety of new technologies have been used to bring this project together. In this section all of these technologies will be explained and the reason for choosing them.
+
+For the backend development, The MEAN stack was used, for front-end development the Ionic Framework was used for cross platform app development so the app could be built for a range of devices. Such as, Android, IOS and Windows Phone. Node.js was then used for the server side aspect of the application, the node.js server was then hosted on Heroku. Firstly, the MEAN stack will be discussed, followed RESTful API, Ionic, firebase and Heroku and then finishing off with GitHub. 
 
 \section{MEAN-Stack}
 What is the MEAN stack? A straight to the point explanation would be that the MEAN-Stack is a free and open-source JavaScript software stack for building dynamic web sites and web applications. Mean Stack is a combination of four popular and highly efficient Javascript libraries, namely MongoDB, Express.js, Angular JS and Node.js. (Shortened down to M for Mongo, E for Express, A for Angular and N for Node). 
 
 Mongo DB can be used to store documents in the JSON format, these JSON queries are then handled by Express JS and Node.js on the server side. Angular JS on the frontend is then fed these JSON documents. With the same language on both the client side and the server side. These two technologies work extremely well together and integration between these two environments is seamless and very subtle.\cite{Mean-Stack}
 
-Because all components of MEAN stack support programs written in JavaScript, MEAN applications can be written in one language for both server-side and client-side execution environments. In order to completely understand the reasons why MEAN stack is so widely used, I will talk about each of its components in detail below. 
+Because all components of MEAN stack support programs written in JavaScript, MEAN applications can be written in one language for both server-side and client-side execution environments. In order to completely understand the reasons why MEAN stack is so widely used. Each of its components will be explained in detail below. 
 
 
 
@@ -132,14 +132,14 @@ execution time as the number of update operation increases. [8] [10].
 MongoDB supports dynamic schema design, allowing the document a collection to have different fields and structures. The database uses a document storage and data interchange format called BSON, which provides a binary representation of JSON-like documents. MongoDB also uses Automatic sharding wich enables data in a collection to be distributed across multiple systems for horizontal scalability as data volumes increase.\cite{MongoDB}.
 
 
-\subsection{How Mongo Works In My Application}
-In my application, I used mongo to store information from my jobs section. I wanted people to be able to add a job and post so other users could then also see that job. An example of how I set up my endpoints in the node server is shown here:
+\subsection{How Mongo Works In the Application}
+In the application, Mongo was used to store information from the jobs section. People are able to add a job and post so other users could then also see that job. An example of how endpoints in the node server are set up is shown here:
 
 \begin{minted}{javascript}
  app.post('/api/jobs', function(req, res)
 \end{minted}
 
-Next, I created a Job provider which was a Typescript file that contained three methods getJobs, createJob, and deleteJobs. The getJob function sends a get request to my Heroku server that will then return my job data. The createJob function accepts a job object as a parameter and then posts that to the same endpoint. While my deleteJob function will make a request to the API to delete it. A small extract of my getJobs function is shown below:
+Next, A Job provider was created which was a Typescript file that contained three methods getJobs, createJob, and deleteJobs. The getJob function sends a get request to my Heroku server that will then return my job data. The createJob function accepts a job object as a parameter and then posts that to the same endpoint. While my deleteJob function will make a request to the API to delete it. A small extract of my getJobs function is shown below:
 
 \begin{minted}{javascript}
  getJobs(){
@@ -160,7 +160,7 @@ resolve(this.data);
 }
 \end{minted}
 
-I used mongoose to connect my application to mlabs. Mongoose is a MongoDB Object Document Mapper (ODM) for Node. It provides the user with a simple validation and query API to help you interact with the MongoDB database.
+Mongoose was used to connect the application to mlabs. Mongoose is a MongoDB Object Document Mapper (ODM) for Node. It provides the user with a simple validation and query API to help you interact with the MongoDB database.
 
 \begin{minted}{javascript}
 mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.mlab.com:27185/heroku_lz2bt2wt',{ useNewUrlParser: true }, function (error) {
@@ -171,14 +171,14 @@ mongoose.connect('mongodb://heroku_lz2bt2wt:kabs1g4ubvtolmbjkvold9inkd@ds227185.
 
 
 \subsection{Express}
-Express is another component of MEAN Stack. Express is a nodejs asynchronous based web framework. Express.js builds on the underlying capability of Node, by providing a web application server framework. Express.js is a Node.js web application server framework, designed for building single-page, multi-page and cross platform hybrid web applications and it gives Node.js a more realistic website structure that is not present when using Node by itself. For my application express will allow me to create routes for the REST API I will be creating.\cite{expressjs}
+Express is another component of MEAN Stack. Express is a nodejs asynchronous based web framework. Express.js builds on the underlying capability of Node, by providing a web application server framework. Express.js is a Node.js web application server framework, designed for building single-page, multi-page and cross platform hybrid web applications and it gives Node.js a more realistic website structure that is not present when using Node by itself. For the application express will allow routes to be created for the REST API that will be created.\cite{expressjs}
 \subsection{Node.js}
 
 Node.js is a Javascript runtime built on Chrome’s V8 JavaScript Engine.
 Node.js uses an event driven, non-blocking I/O model that makes it lightweight
 and efficient web server environment, ideal for constructing a web-service
 API’s. Node.js package ecosystem, “npm”, is the largest ecosystem of open
-source libraries in the world. For my application node will be my server which will sit between the frontend of the application and the MongoDB database.\cite{nodejs}
+source libraries in the world. For the application node will be the server which will sit between the frontend of the application and the MongoDB database.\cite{nodejs}
 
 \subsection{AngularJs}
 The final component making up the mean stack is Angularjs. Defined in Angulars official documentation\cite{angularjs} - AngularJS is a structural framework for dynamic
@@ -204,7 +204,7 @@ After speaking in some detail about each component of the mean stack you should 
 \section{RESTful API}
 A RESTful API is an application program interface (API) that uses the HTTP requests GET, POST, PUT, and DELETE data. A RESTful API, which is also referred to as a RESTful web service is based on representational state transfer (REST) technology\cite{Restapi}. 
 
-A RESTful web service is based on representational state transfer (REST) technology. It is an API that communicates with HTTP requests to GET, PUT, POST and DELETE data and then links to the four fundamental database operations - CREATE, READ, UPDATE, DELETE. An API for an application is basically code that allows two software programs to communicate with each another. In my case the api is created in my node server file and this then links to my database where I am able to apply the HTTP requests. 
+A RESTful web service is based on representational state transfer (REST) technology. It is an API that communicates with HTTP requests to GET, PUT, POST and DELETE data and then links to the four fundamental database operations - CREATE, READ, UPDATE, DELETE. An API for an application is basically code that allows two software programs to communicate with each another. In case of this application the API is created in the node server file and this then links to the database where HTTP requests are applied. 
 
 \subsection {How RESTful API's work}
 
@@ -219,7 +219,7 @@ For these reasons REST is largely preferred for web/mobile use. The RESTful mode
 \section{Ionic}
 Ionic is a complete open-source SDK for hybrid mobile app development. It is built on Angular. Ionic provides tools and services for developing hybrid mobile apps using Web technologies like CSS, HTML5, and Sass. Apps can be built with these Web technologies and then distributed through native app stores to be installed on devices by using Cordova.
 \item Services and features: Ionic provides all the functionality which can be found in native mobile development SDKs. Users can build their apps, customize them for Android or iOS, and deploy through Cordova. Ionic includes mobile components, typography, interactive paradigms, and an extensible base theme. \\ Besides the SDK, Ionic also provides services that developers can use to enable features, such as push notifications, A/B testing, analytics, code deploys, and automated builds. \\ Ionic also provides a powerful command-line interface (CLI), so developers can get started with creating a project with a simple command. The CLI also allows developers to add Cordova plugins and additional front-end packages \cite{7}, enable push notifications, generate app Icons and Splash screens, and build native binaries. \\
-\item Supported platforms: Ionic is focused on building for modern Web standards and for modern mobile devices. For Android, Ionic supports Android 4.1 and up. For iOS, Ionic supports iOS 7 and up. Ionic 2 supports the Universal Windows Platform for building Windows 10 apps. Ionic Framework, powered by Angular.js, supports BlackBerry 10 apps.While trying to understand Ionic better I followed along with some tutorials I found on this blog post \cite{joshmorony}. \\
+\item Supported platforms: Ionic is focused on building for modern Web standards and for modern mobile devices. For Android, Ionic supports Android 4.1 and up. For iOS, Ionic supports iOS 7 and up. Ionic 2 supports the Universal Windows Platform for building Windows 10 apps. Ionic Framework, powered by Angular.js, supports BlackBerry 10 apps.
 \item Installation: Ionic is an npm module and requires Node.js.
 \begin{itemize}
 \\ \item Install Ionic Code: npm install -g ionic \\ First, install Node.js. Then, install the latest Ionic command-line tools in your terminal. Follow the Android and iOS platform guides to install required tools for development. \\ 
@@ -238,7 +238,7 @@ Basically, TypeScript is a superset of JavaScript that compiles into Java, which
 
 \section{Firebase}
 
-For my login page I needed to handle user Authentication. To do this I decided to use Firebase Authentication. 
+For the login page the user Authentication needed to be handled. To do this Firebase Authentication was used. 
 
 Firebase Authentication provides backend services, SDKs, and ready to use UI libraries to authenticate users of your application. It supports authentication using passwords, popular federated identity providers like Google, Facebook and Twitter.\cite{firebaseauth}
 
@@ -247,13 +247,12 @@ Firebase Authentication integrates with other Firebase services, and it competes
 A user is able to sign in to a Firebase app by either using FirebaseUI as a complete drop-in auth solution or by using the Firebase Authentication SDK to manually integrate one more of the  sign-in methods into the application. For my application I used the firebase SDK. By doing this we were able to choose which sign in methods we wanted to add to our application. I decided to use just email and password authentication. 
 Firebase Authentication also handles sending password reset emails. The firebase SDK also comes with a reset password feature which sends the user an email with a link to reset there password. This is a good security measure as the user will need to have access to their personal email account before they can reset their password.\cite{firebase}
 \subsection{Realtime Database}
+The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. As this is a cross-platform app with iOS, Android, and Windows, all of the clients share one Realtime Database instance and automatically receive updates with the newest data.\cite{realtime}
 
 \section{Heroku}
-In my application, I needed somewhere to deploy it to. After a lot of research and experimentation, I decided to use Heroku\cite{heroku}. Heroku hosts my Node server with my RESTful API. My Heroku deployment is then connected to mLab which is a fully managed cloud database service that hosts MongoDB databases and connects them to services like Heroku \cite{mlab}. This then allowed me to run the application with out any intervention. 
+In this application, it needed somewhere to be deployed to. After a lot of research and experimentation, it was determined that Heroku\cite{heroku} would be the best solution. Heroku hosts the Node server with the RESTful API. The Heroku deployment is then connected to mLab which is a fully managed cloud database service that hosts MongoDB databases and connects them to services like Heroku \cite{mlab}. This then allowed the application to run with out any intervention. 
 
-This was the most difficult part of the project to get working as I had a lot of trouble getting my database to properly connect with Heroku but after extensive research and a lot of testing I figured out that I needed to point the node.js server to the build of the application and then add the URL of our Heroku instance in replace of the localhost URL.
-
-
+This was the most difficult part of the project to get working as there was a lot of trouble getting the database to properly connect with Heroku but after extensive research and a lot of testing it was discovered that the node.js server needed to be pointed to the build of the application and then add the URL of the Heroku instance.
 
 \section{GitHub}
 GitHub is a web-based collaboration platform for software developers, delivered through a software-as-a-service (SaaS) business model which allows you to host and review code along with managing projects. Github first launched in 2008 and was founded on Git which is an open source code management system created by Linus Torvalds to make software builds faster.\cite{github}
@@ -285,7 +284,7 @@ to push all the files to the master branch of your repository.
 
 Other features that GitHub has to offer are its ability to fork, pull and merge from someone's repository. A fork is essentially a copy of a repository that allows developers to make modifications without affecting the original code.  If the developer would like to share the modifications, they can send a pull request to the owner of the repository. The owner can then decide after reviewing the modifications if they would like to pull the modifications into the repository. They then have the option to accept the modifications and merge them with the original repository.\cite{githubop}
 
-Another feature of Github that I found to be very helpful is the commit history. Everytime you make a change to your code and push it up to Github you are creating a commit. A commit is Githubs way of tracking the changes you have made to the project since your last commit. I found this useful because I could easily see what was pushed up and exactly what was added or removed. You are also able to download the project from a commit at any point, so for example you added features to the project that you no longer want you can revert back to any point in your commit history. I used this feature on a few occasions as I often encountered problems after doing some work on the project which resulted in issues and errors and It saved me a lot of time as a result.
+Another feature of Github that was very helpful is the commit history. Everytime you make a change to your code and push it up to Github you are creating a commit. A commit is Githubs way of tracking the changes you have made to the project since your last commit. It was useful because it was easy to see what was pushed up and exactly what was added or removed. You are also able to download the project from a commit at any point, so for example you added features to the project that you no longer want you can revert back to any point in your commit history. This feature was used on a few occasions as often problems were encountered after doing some work on the project which resulted in issues and errors and It saved me a lot of time as a result.
 
 
 \chapter{System Design}
@@ -297,12 +296,6 @@ The architecture of this project is divided into three different tiers of techno
 \begin{center}    
 	\includegraphics[width=15cm, height=6.8cm]{img/system.png}
 \end{center}
-
-
-
-
-
-
 
 \section{Front end}
 In the image above to the left, you can see the technologies that consist of the front end. Ionic 2 and  Angular 2 were used to create a cross-platform application that would run on both Android and IOS. As you can see in the diagram the Ionic 2 application is connected to the Heroku deployment which hosts the REST API. The app sends a GET request to get the JSON data from the API to display the jobs inside the app. The app can also send a POST request to the API when a new job has been created on the app and also a DELETE request when a job has been deleted from the app. When the application development was completed the Ionic CLI was user to build the application .apk for both platforms using the following command:
@@ -420,7 +413,10 @@ On the reset password popup the user can enter their email that they used to reg
 
 In these pages, the user can view, create and delete jobs. The list of jobs is pulled from the hosted Node server which contains the REST API which sends JSON data to the app which is translated into the list you see above. If the plus symbol at the top of the app is selected the user is navigated to the add job page. Here the user must enter a title for their job, a description, a location and give a maximum price and then press save. Once this is done the app sends JSON data to the node server hosted on Heroku. This information is then used to store the job in the database. Now, this job will be added for every user using the app. If a job is swiped to the left it can be deleted or the user can send the creator of the job a message.
 \subsection{Message Page}
-
+\begin{center}    
+	\includegraphics[width=7cm, height=12cm]{img/message.jpg}
+\end{center}
+In this page the users can interact with each other and send private messages back and forth.
 
 
 
