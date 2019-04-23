@@ -7,86 +7,52 @@ This project was developed as my final year project in level 8, B.Sc. (Hons.) in
 \paragraph{Authors}
 This project was developed by Kieran O'Halloran in order to achieve a level 8 B.Sc. (Hons.) in Software Development.
 
-
 \chapter{Introduction}
+This is a dissertation for a final year project which was developed to achieve a B.Sc. (Hons.) in Software Development. This project was designed and created by one student. The idea for the application was to create a cross platform app which would allow users to create advertisments for jobs they needed someone else to do for them. It also allows users to communicate with each other to arrange details for the job to be done such as, a time that suited both, and any other private details which the had to share with each other. The app is named "Tradie".
+\section {What it’s about}
+The premise of this project was to build a hybrid application that used a collection of technologies that worked together. The project originally consisted of Ionic 2 and Firebase 3 but after much discussion with my supervisor and after some more research we came to an agreement that the two technologies together were too simple for a level 8 project and took too much control away from our server side and database logic. With this in mind, More research was carried out on more technologies which would be more of an appropriate standard for a level 8 project. After all the research  the MEAN stack\cite{Mean-Stack} was choosen.
 
+The MEAN stack is a collection of technologies that are all Javascript based which is great for combined development between the technologies. The MEAN stack consists of an Angular.js frontend (In our case Angular 2), A MongoDB backend for our database while Express and Node.js are the remaining technologies which control our server side logic. Along with the MEAN stack setup, Ionic is also used. Ionic is the framework which is used to handle the frontend of the app. Ionic also allows the app to be cross developed for Android and IOS synchronously.
 
-\chapter{Context}
+\section{Scope}
+The project has a three-tier architecture with 3 unique parts all communicating with each other to form the app. The 3 tiers are as follows:
+\subsection{Backend/Database tier}
+This is the mongo database which contains all the information on jobs that users can create and delete from the app. This database is also connected to an mLabs connection which in turn is then connected to the Heroku deployment which hosts the Node server with the RESTful API. Together these technologies all form the pieces which allow users to add to and delete job items. In summary, the backend of the app sends information in JSON format to the Node server and anything sent from the frontend to the Node server is also sent back to the database in JSON format.
+
+\subsection{Server side/Node}
+This is the middle tier which connects the Ionic app to the Mongo database.  This tier consists of the Node server which contains the RESTful API and tells the app to connect to the database containing the jobs. The REST API allows the app to get JSON data from the server and output it in our UI in the app. This tier is also hosted on Heroku. This allows users on their phone to use this app as Node servers can not be run by a mobile device. Instead, the Ionic app connects to the hosted Node server on our Heroku deployment. 
+
+\subsection{Frontend/ Ionic application}
+The front-end of the application is the cross-platform app developed using Ionic. Ionic uses a combination of HTML, SCSS and Typescript to design the UI of the app. The Ionic app gets data from the database by connecting to our Node server which contains the REST API. It also allows users to add data to the server using a UI to input information which is pushed in JSON format to the server and into the database.
+
+\section{Objectives}
+
+The primary object in developing this application was to learn a set of new skills using the MEAN stack to build a cross-platform mobile application. To go about this milestones were set from the beginning:
 \begin{itemize}
-\item Provide a context for your project.
-\item Set out the objectives of the project
-\item Briefly list each chapter / section and provide a 1-2 line description of what each section contains.
-\item List the resource URL (GitHub address) for the project and provide a brief list of the main elements at the URL.
+\item To create our app using Ionic and the MEAN stack by learning the new framework and getting to grips with Typescript. Learning how to create our MongoDB database and connect it to mLabs and then connecting the Ionic app to the database using node. By the end of this project, the aim was to be very familiar with these technologies and and how they work.
+\item Users to be able to access the app securely with authentication and be able to login with a username and password.
+\item Users to be able to post jobs or just general work they needed someone to do. Write them to the app and also be able to delete them again.
+\item Users to be able to see immediately any newly added jobs to the app by other users. If users refresh the Job page in the app and someone has added a new job since the last refresh, the new job should appear on their device. 
+\item Users to be able to message each other to arrange details for carrying out the job
 \end{itemize}
 
-\section{Filler}
+
+\section{Documentation}
+Up until now, this document has given a brief description of what this project is, how it was developed, where the idea came from, the goals for the project and the scope of the project. This project will be discussed in even more detail under the following headings in this document. 
+
+\textbf {Methodology} - This section contains how project was implemented in terms of both development and research and will also give the opinion on how everything was approached at a proper level for a level 8 project. The project planning will be discussed in terms of which project methodology was used, how often meetings took place and what the meetings consisted of, how the work was divided into different sections with different deadlines to make this application achievable and the feedback received from the supervisor.
 
 
-\subsection{More filler}
+\textbf {Technology Review} - This part of the documentation documents the outcome of the research into the technologies that were used in the project and how they were implemented to achieve the objectives described in the introduction. Each technology used for the app will be described in detail in both what they are and exactly how they were used.
 
-\section{Filler}
+\textbf {System Design} - This section will describe the architecture of the project. It will describe how each technology works together to form this application. It will have diagrams to help visualise the architecture of the project and will contain screenshots of the application.
 
+\textbf {System Evaluation} - This is where the project will be evaluated by comparing the final outcome of the app to the objects initially set out. Difficulties and limitations met in the development process of the app will also be discussed in this section.
+
+\textbf {Conclusion} - This will be a summary of the entire finished project. It will discuss the goals of the project that were set at the beginning and how well they were achieved throughout the development process. It will discuss what was learned and the experiences in developing this application. It will mention what was done right during development and what would be changed if given the chance. Overall it will nicely wrap up this documentation and add some final piece of insight on the overall project experience.
 
 \chapter{Methodology}
-About one to two pages.
-Describe the way you went about your project:
-\begin{itemize}
-\item Agile / incremental and iterative approach to development. Planning, meetings.
-\item What about validation and testing? Junit or some other framework.
-\item If team based, did you use GitHub during the development process.
-\item Selection criteria for algorithms, languages, platforms and technolo-gies.
-\end{itemize}
-Check out the nice graphs in Figure \ref{tikz:graphs}, and the nice diagram in Figure \ref{tikz:mydiagram}.
-
-\begin{figure}
-  \centering
-  \begin{tikzpicture}
-  \begin{scope}[every node/.style={circle,thick,draw}]
-  \node (a) at (0,2) {a};
-  \node (b) at (2,2) {b};
-  \node (c) at (2,0) {c};
-  \node (d) at (0,0) {d};
-  \end{scope}
-  \begin{scope}[every edge/.style={draw=black,thick}]
-  \path (a) edge (b);
-  \path (b) edge (c);
-  \path (b) edge (d);
-  \path (c) edge (d);
-  \end{scope}
-  \node () at (1,-1) {$G_1$};
-  \end{tikzpicture}
-  \hspace{1.5cm}
-  \begin{tikzpicture}
-  \begin{scope}[every node/.style={circle,thick,draw}]
-  \node (1) at (0,2) {a};
-  \node (2) at (2,2) {b};
-  \node (3) at (2,0) {c};
-  \node (4) at (0,0) {d};
-  \end{scope}
-  \begin{scope}[every edge/.style={draw=black,thick}]
-  \path (1) edge (2);
-  \path (1) edge (3);
-  \path (1) edge (4);
-  \path (3) edge (4);
-  \end{scope}
-  \node () at (1,-1) {$G_2$};
-  \end{tikzpicture}
-  \caption{Nice pictures}
-  \label{tikz:graphs}
-\end{figure}
-
-
-\begin{figure}
-  \centering
-  \begin{tikzpicture}[node distance=6cm]
-  \node (a) [rect] {A Big Blue Block};
-  \node (b) [oval, right of=a] {And His Oval Friend};
-  \draw [line] (a) -- (b);
-  \end{tikzpicture}
-  \caption{Nice pictures}
-  \label{tikz:graphs}
-\end{figure}
-
+\section{Initial planning and research}
 
 \chapter{Technology Review}
 In this section, the different technologies incorporated in to this project will be discussed.A variety of new technologies have been used to bring this project together. In this section all of these technologies will be explained and the reason for choosing them.
