@@ -53,6 +53,42 @@ Up until now, this document has given a brief description of what this project i
 
 \chapter{Methodology}
 \section{Initial planning and research}
+Before this application was developed there was a lot of research conducted on the different technologies that would be involved in the project. Ionic was chosen as the frontend technology for this application. Some time wa spent researching the features and technologies like Typescript. After completing research of the framework it was felt Ionic was the right choice and was at the right level of complexity to be worthy of a level 8 project.
+With the frontend technology chosen research then continued for the backend technology. It was clear the backend would have to have a database for the jobs and events and in the future this database would have to be hosted online. This resulted in choosing Firebase. It would have allowed the application to store information in an online database, Authenticate users with their firebase authentication service and host the app online for use in a web browser.
+In the end, the original approach planning proved to be ineffective and not well thought out. It was advised by the supervisor that the application should be build using a three tier architecture. This set the development of the project back a bit  as the development had already started and wuite abit of work had been done at this stage. More research had to be done on some new technologies and see how they could work with the application. The methods of project planning are discussed below.
+
+\section{Project planning and meetings}
+All planning of this project was done in weekly manner, since this Final Year Project was developed by a single student, there was not any meetings on the team project discussion The first thing to do was sit down and brainstorm what the app was going to be and how it was going to be achieved. When the idea had been picked the next step was to set out some objectives to be met by the next meeting and begin researching the technologies.
+
+There was then had weekly meeting with the supervisor Dr. John Healy to whom all research and findings were presented and discussed how to go about development in a structured and organised fashion. John was very helpful when it came to project planning and he advised us greatly on how to approach development in different stages. He also helped advised that the original project idea might not have been to the standards of a level 8 project and he also advised to conduct research into the MEAN stack which is the group of technologies used for development.
+Each of these technologies were new to me so heavy research had to be completed in order for this project to be developed properly. With all the technologies researched and the application outline set, development on the app started. The app was split in two parts with both the ionic frontend and the MongoDB backend. It was decided to split development of these into different parts which would be carried out at different stages of the development. 
+Weekly meeting with John continued and each week there would be an objective set and the goal would be to have it completed by the next meeting. If the objectives were not met any problems would be discussed and a solution would be worked out. 
+
+\section{Development Tools}
+\subsection{The hardware environment}
+\begin{itemize}
+\item Laptop configuration: \\ \\ CPU: 1.6 GHz Intel Core i5. \\ RAM: 8 GB 1600 MHz DDR3. \\ Graphic: Intel HD Graphics 6000 1536 MB. \\ Operation System: OS X EI Capitan.
+\end{itemize}
+
+\subsection{Software Environment}
+\begin{itemize}
+\item Development Tool: Visual Studio Code (version 1.22.1).
+\item Browser: Google Chrome.
+\item Development Enviroment: Node.js.
+\item Database: Firebase/ MongoDB
+\end{itemize}
+
+\subsection{Visual Studio Code Editor}
+\begin{itemize}
+\item Download Link: https://code.visualstudio.com/ \\ \\ Visual Studio Code is a source code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring. It is also customizable, so users can change the editor's theme, keyboard shortcuts, and preferences. It is free and open-source. \\ Visual Studio Code is based on Electron, a framework which is used to deploy Node.js applications for the desktop running on the Blink layout engine. Although it uses the Electron framework, the software does not use Atom and instead employs the same editor component (codenamed "Monaco") used in Visual Studio Team Services (formerly called Visual Studio Online). \\ In the Stack Overflow 2018 Developer Survey, Visual Studio code was ranked the most popular developer environment tool, with 34.9\% of 75398 respondents claiming to use it.\cite{VSC}
+\end{itemize}
+
+\section{Platform Brief}
+\subsection{GitHub Profile}
+GitHub (originally named Logical Awesome LLC) is a Web-based hosting service that uses git for version control. It is mainly used for computer code. It provides all of Git's distributed version control and source code management (SCM) capabilities and adds its own features. It provides access control and various collaboration features for each project, such as bug tracking, feature requests, task management, and wikis. \\ \\ GitHub Personal Repository and Wiki pages You can edit these pages using the git repository. As a distributed version control system, Git does not have a conceptual main library. Each warehouse copy can be used independently. Any differences between these warehouses can be combined together. \\ \\ GitHub can host a variety of gits and provide a unified web interface. However, providing different service code management websites such as Source Forge and Google Code, GitHub's unique branch project management is very simple and highly interoperable. If you want to contribute code to your project it is an easy task: first on the project site for the "fork" button, then check the code and add the changes to a separate code base, and finally through the built-in "pull request" mechanism applicable to the project director code.
+
+
+
 
 \chapter{Technology Review}
 In this section, the different technologies incorporated in to this project will be discussed.A variety of new technologies have been used to bring this project together. In this section all of these technologies will be explained and the reason for choosing them.
@@ -399,19 +435,10 @@ In this page the users can interact with each other and send private messages ba
 
 
 \chapter{System Evaluation}
-As many pages as needed.
-\begin{itemize}
-\item Prove that your software is robust. How? Testing etc. 
-\item Use performance benchmarks (space and time) if algorithmic.
-\item Measure the outcomes / outputs of your system / software against the objectives from the Introduction.
-\item Highlight any limitations or opportuni-ties in your approach or technologies used.
-\end{itemize}
+As mentioned in the introduction of this paper the main objective when when development started on this app was to learn a whole new set of skills. Primarily using the MEAN stack to develop a cross platform mobile application. The main objective in terms of functionality of the application was for users to be able to post jobs and save them to the application and also be able to delete them again. This goal was achieved as there is a page on the application that allow users to do exactly that. The next goal was to have a feature where the job page would be hosted online. Again this was achieved  as the mongodb database is connected to Heroku. This meant that all jobs would be saved here and any changes will reflect on application for all users. The login authentication was handled by Firebase Auth the end user app was built in ionic framework which is easily consuming the data from an API and the synchronization is very smooth and is working effectively. 
 
 \chapter{Conclusion}
-About three pages.
 
-\begin{itemize}
-\item Briefly summarise your context and ob-jectives (a few lines).
-\item Highlight your findings from the evalua-tion section / chapter and any opportuni-ties identified.
-\end{itemize}
 
+\chapter{Appendices}
+\textbf {GitHub: } \url{https://github.com/123kieran/Year4_Project}
