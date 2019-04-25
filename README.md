@@ -23,7 +23,7 @@ In this page the users can interact with each other and send private messages ba
 
 ## Architecture
 
-![alt text](final-year-project-template-master/img/system.png)
+![alt text](Final_Year_Project_Minor_Dissertation/img/system.png)
 
 ___
 
