@@ -24,10 +24,10 @@ export class AddJobPage {
   The save() function saves a job to the mongo database provisioned to this app
  */
   save(): void {
-    let job = { // the revew item
+    let job = { // the job item
       title: this.title, // the title of the job
       description: this.description, // the job description
-      location: this.location,
+      location: this.location,//job location
       price: this.price // the job price
     };
     this.viewCtrl.dismiss(job); // closes the add job page once added

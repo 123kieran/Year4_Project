@@ -4,13 +4,8 @@
 
 import { Component } from "@angular/core";
 import { NavController, ModalController } from 'ionic-angular';
-//import { AddJobPage } from '../add-job-page/add-job-page'; // Adds the add job page to be loaded into a modal 
-//import { Jobs } from '../../providers/jobs'; // Imports the provider
-//import { MapPage } from '../map/map'; // imports the job page to be opened from a tab
-//import { ListPage } from '../list/list'; // imports the list page to be opened from a tab
 import { JobPage } from '../job-list-page/job-list-page'; // imports the job page to be opened from a tab
 import { AboutPage } from "../about/about";
-//port { PlaceHomePage } from '../place-home/place-home'; //imports the places page to be navigated to
 
 
 @Component({

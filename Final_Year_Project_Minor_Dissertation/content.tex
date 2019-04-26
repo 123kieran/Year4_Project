@@ -436,9 +436,39 @@ In this page the users can interact with each other and send private messages ba
 
 \chapter{System Evaluation}
 As mentioned in the introduction of this paper the main objective when when development started on this app was to learn a whole new set of skills. Primarily using the MEAN stack to develop a cross platform mobile application. The main objective in terms of functionality of the application was for users to be able to post jobs and save them to the application and also be able to delete them again. This goal was achieved as there is a page on the application that allow users to do exactly that. The next goal was to have a feature where the job page would be hosted online. Again this was achieved  as the mongodb database is connected to Heroku. This meant that all jobs would be saved here and any changes will reflect on application for all users. The login authentication was handled by Firebase Auth the end user app was built in ionic framework which is easily consuming the data from an API and the synchronization is very smooth and is working effectively. 
+\section{Testing}
+To be sure all parts of the application works correctly tests need to be run on the application. Testing is an important task of any software project, without testing, programmers could easily introduce more bugs to a project. It's extremely important to test each section of a software project before releasing a new version of the application. Creating automated tests for your application is a great way to improve the quality of your code and protect against code breaking.
+For testing the application. I ran it many times in the browser and checked that all the implement features worked correctly. I also used the .apk which was created to test the application on an android device and found all the features to work relatively smoothly.
+
+\section{Limitations}
+Most software projects come with limitations and this project is no different. The main limitation for this application is the jobs part of the application need a constant internet connection in order to work. I looked at possibly implementing a CouchDB technology however I felt like it wouldn't really solve the problem. Another limitation to the application is that all users can vies the messages that have been stnt on the application.
 
 \chapter{Conclusion}
+In Conclusion, it has been extremely interesting and highly rewarding working on this application. There was many problems faced during the development of this project but I felt they were handled  quite well. The first problem was the fact that technologies were changed mid-development. This required some adjustment but was also a great learning experience as I had to adjust quickly to the change. The second major problem I faced was working on deploying the application to Heroku. I was getting errors and lots of them but after a lot of time and research I overcame these errors. Despite these setbacks, I fell I gave it my best effort and I was able to implement all the objectives set out before development started. In the introduction, there were five main objectives set out for this project. They were as follows:
+\begin{itemize}
+	\item Create an application using Ionic 2 and the MEAN stack.
+	\item Have a secure login page for users.
+	\item A section where users are able to post jobs they needed someone to do.
+	\item A feature where these reviews would then be seen immediately by other users. 
+              \item A feature where users could contach each other through the application
+\end{itemize}
+The first objective was successfully achieved when the MEAN stack was implemented into the Ionic application. The use of MongoDB, Express, Angular and node gave the application a more complex feel when developing, as these technologies are widely used together in industry. These technologies were also brand new for me so it was challenging at first to get to grips on how they all worked together, but to have fully implemented them in this project was very satisfying for me. Another challenge I faced with these technologies was the fact that I originally had planned to use just firebase but after a discussion with my supervisor he advised me to change this as using just firebase wouldn't have been enough for a project at this level. I am glad I listened because I feel that I wouldn't have got a lot out of using just the Firebase technology.
+
+The second objective was also completed, having a secure login page by using firebase authentication. As I had previously done some work with firebase I decided to carry this aspect over as I found it to be very secure. This allowed the storage of usernames and passwords in an online database and also have a function which allowed users to reset their passwords. The reset function was very secure as the user would have to enter their email address and if that email address matches an email address on the firebase database they would then receive an email with a reset password link.
+
+The third objective was to add a page where users could post jobs they needed someone to do for them. This part of the application was achieved by using the mean stack and was one of the harder parts of the project to implement. As mentioned above the technologies were new to me so it was challenging, however, I wanted this project to challenge me as I wouldn't have learned anything from doing a project that was easy and already familiar to me.
+
+The main objective and defiantly the hardest part of the application to implement was having somewhere to store the jobs online. For this, Heroku was used which was difficult to get connected to the application. To go about this the database had to be hoseted on a website called mlab which is then connected to the local MongoDB database. The mlab instance was then connected to Heroku and after a lot of research and trial and error it eventually worked and the applications jobs now update for all users. Getting this part of the project working was probably the most rewarding part as I had not connected a database to Heroku before and I spent a lot of time researching how to do this.
+
+The final objective was allowing the users to contact each other through the application. This was done using the Firebase Realtime database. This was used so the messages would appear instantly. I felt this was a good feature to add to the application as it made it easy for users to discuss further details and arrangements for completing the job.
+
+
+As a whole, I was extremely happy with how this project turned out. I learned a lot more than I thought I would in terms of the technologies used and how to implement them. I will also take valuable lessons from this experience such as better planning when deciding the technologies that are going to be used. The biggest lesson I will take from this experience is how to work effectively in short spaces of time. Despite the fact I did this project on my own I felt it went very well. I also managed to meet the project deadline. Overall these lessons will stand to me in the working world and this experience has defiantly better prepared me for exactly that.
+
+
 
 
 \chapter{Appendices}
 \textbf {GitHub: } \url{https://github.com/123kieran/Year4_Project}
+
+\textbf {Heroku: } \url{https://kierantradie.herokuapp.com/}

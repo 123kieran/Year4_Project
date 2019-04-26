@@ -42,15 +42,13 @@ export class LogIn {
   public loginhome() {
     let email = this.user.email; // example@email.com, original email address
     this.showLoading();
-    this.navCtrl.push(MessagePage,{email});
     this.auth.login(this.user, {
       provider: AuthProviders.Password,
         method: AuthMethods.Password 
     }).then((authData) => {
       this.loader.dismiss();
      this.navCtrl.setRoot(HomePage);
-     this.navCtrl.push(HomePage);  //push the email to tv page
-     this.navCtrl.push(HomePage,{email});  //push the email to tv page
+     this.navCtrl.push(HomePage,{email});  //push the email to home page
 
     }).catch((error) => {
       this.showError(error); // if log in is unsuccessful show error
