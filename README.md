@@ -68,6 +68,10 @@ This will start the server for our API. Now open a internet browser and go to ht
 
 ## How to Deploy the App on your Smart Phone.
 
-To use this app on your smart phone device download the .apk file included in this repository and put the file on your phone. Install the .apk on your device and the app will then be installed on your phone. This app is built for Android and IOS.
+To use this app on your smart phone device, Run
+```
+>cordova build
+```
+this will create the .apk file Install the .apk on your device and the app will then be installed on your phone. This app is built for Android and IOS.
 
 
