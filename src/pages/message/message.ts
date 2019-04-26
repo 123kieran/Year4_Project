@@ -20,6 +20,7 @@ export class MessagePage {
   
   constructor(public db:AngularFireDatabase,public navCtrl: NavController, public navParams: NavParams){
     this.email = "123kieran@gmail.com";
+    //this.email = this.navParams.get('email');
   this._chatSubscription = this.db.list('/message').subscribe(data =>{
     this.messages=data;
     });
