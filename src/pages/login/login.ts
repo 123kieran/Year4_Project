@@ -5,9 +5,8 @@ import { AngularFireAuth, AuthProviders, AuthMethods } from 'angularfire2';
 import { CreateUser } from '../create-user/create-user';
 import firebase from 'firebase'; // for password reset
 
-
 import { HomePage } from '../home/home';
-import { MessagePage } from '../message/message';
+
 
 
 
